@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapa 1 - Eleições 2026-2028</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cor-clara: #f0eeed;
+      --cor-principal: #1800ad;
+      --cor-principal-escura: #0f0080;
+      --cor-secundaria: #ffcc00;
+      --cor-secundaria-escura: #e6b800;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--cor-clara);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--cor-principal) 0%, var(--cor-principal-escura) 100%);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230f0080' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.2;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    .slogan {
+      background-color: var(--cor-secundaria);
+      color: var(--cor-principal-escura);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- CANDIDATOS ---------- */
+    .candidatos {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--cor-principal);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: var(--cor-secundaria);
+      margin: 0.5rem auto;
+      border-radius: 2px;
+    }
+
+    .cards-container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      width: 300px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card h2 {
+      color: var(--cor-principal);
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--cor-secundaria);
+      color: var(--cor-principal-escura);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- MENSAGEM PRINCIPAL ---------- */
+    .mensagem {
+      background: linear-gradient(135deg, var(--cor-principal) 0%, var(--cor-principal-escura) 100%);
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mensagem::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+
+    .mensagem-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .mensagem h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .mensagem p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      opacity: 0.95;
+    }
+
+    .destaque {
+      color: var(--cor-secundaria);
+      font-weight: 600;
+    }
+
+    /* ---------- PROPOSTAS ---------- */
+    .propostas {
+      padding: 5rem 2rem;
+      background-color: white;
+    }
+
+    .propostas-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .propostas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .proposta-card {
+      background: var(--cor-clara);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: 0.3s;
+      border-top: 4px solid var(--cor-principal);
+    }
+
+    .proposta-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .proposta-icon {
+      font-size: 2.5rem;
+      color: var(--cor-principal);
+      margin-bottom: 1rem;
+    }
+
+    .proposta-card h3 {
+      color: var(--cor-principal);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .proposta-card p {
+      color: #555;
+    }
+
+    /* ---------- REALIZAÇÕES ---------- */
+    .realizacoes {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--cor-principal) 0%, var(--cor-principal-escura) 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .realizacoes::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.2;
+    }
+
+    .realizacoes-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .realizacoes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .realizacao-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .realizacao-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .realizacao-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: var(--cor-secundaria);
+    }
+
+    .realizacao-card p {
+      opacity: 0.9;
+    }
+
+    /* ---------- VÍDEO DA CAMPANHA ---------- */
+    .video {
+      text-align: center;
+      margin: 5rem auto;
+      padding: 2rem;
+      max-width: 900px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .video h2 {
+      color: var(--cor-principal);
+      margin-bottom: 1.5rem;
+    }
+
+    .video iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* ---------- URNA ELETRÔNICA ---------- */
+    .urna {
+      text-align: center;
+      margin: 5rem auto;
+      padding: 2rem;
+      max-width: 600px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .urna h2 {
+      color: var(--cor-principal);
+      margin-bottom: 1.5rem;
+    }
+
+    .urna-container {
+      background: #e4e4e4;
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .numero-label {
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: var(--cor-principal);
+    }
+
+    #numero {
+      width: 100px;
+      height: 100px;
+      font-size: 3rem;
+      text-align: center;
+      border: 3px solid var(--cor-principal);
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+      color: var(--cor-principal);
+    }
+
+    button {
+      background-color: var(--cor-principal);
+      color: white;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background-color: var(--cor-principal-escura);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    }
+
+    #mensagem {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      min-height: 2rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: linear-gradient(135deg, var(--cor-principal) 0%, var(--cor-principal-escura) 100%);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin-top: 3rem;
+      font-size: 1rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-info {
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social-icon:hover {
+      background-color: var(--cor-secundaria);
+      color: var(--cor-principal-escura);
+      transform: translateY(-3px);
+    }
+
+    /* ---------- MOBILE ---------- */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .card {
+        width: 100%;
+        max-width: 350px;
+      }
+      
+      .video iframe {
+        height: 250px;
+      }
+      
+      #numero {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+      }
+      
+      .propostas-grid,
+      .realizacoes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>CHAPA 1</h1>
+      <p>Escola Estadual Professora Maria Stella Pinheiro Costa</p>
+      <div class="slogan">Inovação, Diálogo e Compromisso</div>
+    </div>
+  </header>
+
+  <!-- CANDIDATOS -->
+  <section class="candidatos">
+    <h2 class="section-title">Nossos Candidatos</h2>
+    
+    <div class="cards-container">
+      <div class="card">
+        <img src="img/lennon3.jpeg" alt="Lennon Freitas" class="card-img">
+        
+        <div class="card-content">
+          <h2>Lennon Freitas</h2>
+          <p>Diretor</p>
+          <p>Inovação, diálogo e compromisso para uma gestão participativa e transformadora.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="img/georgeana.jpeg" alt="Georgeana Silva" class="card-img">
+        <div class="card-content">
+          <h2>Georgeana Silva</h2>
+          <p> Vice-Diretora</p>
+          <p>Acolhimento, participação e criatividade para uma escola mais inclusiva e dinâmica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENSAGEM PRINCIPAL -->
+  <section class="mensagem">
+    <div class="mensagem-content">
+      <h2>NOSSO PROPÓSITO</h2>
+      <p>Continuidade das propostas para o <span class="destaque">triênio 2026–2028</span>.</p>
+      <p>Com <span class="destaque">diálogo e inovação</span>, construiremos juntos o futuro da nossa escola.</p>
+      <p>Uma gestão que <span class="destaque">ouve, inclui e transforma</span>.</p>
+    </div>
+  </section>
+
+  <!-- PROPOSTAS -->
+  <section class="propostas">
+    <div class="propostas-container">
+      <h2 class="section-title">Nossas Propostas</h2>
+      
+      <div class="propostas-grid">
+        <div class="proposta-card">
+          <div class="proposta-icon">📚</div>
+          <h3>Fortalecimento Pedagógico</h3>
+          <p>Revisão e atualização do currículo para garantir que os alunos estejam preparados para o mercado de trabalho e para a vida.</p>
+        </div>
+        
+        <div class="proposta-card">
+          <div class="proposta-icon">🤝</div>
+          <h3>Participação Estudantil</h3>
+          <p>Promover a integração do ensino socioemocional na perspectiva de cultivarmos valores essenciais para a promoção do bem-estar individual e a construção de uma sociedade de respeito e responsabilidade.  </p>
+        </div>
+        
+        <div class="proposta-card">
+          <div class="proposta-icon">🏫</div>
+          <h3>Infraestrutura e Acessibilidade</h3>
+          <p>Continuação da reforma, salas de laboratórios, cozinha, refeitório, com o objetivo  de garantir um ambiente seguro e confortável para os alunos e comunidade escolar em geral.</p>
+        </div>
+        
+        <div class="proposta-card">
+          <div class="proposta-icon">🌐</div>
+          <h3>Tecnologia e Inovação</h3>
+          <p>Viabilização e funcionamento da sala de informatica.<br>
+Aquisição de novos recursos tecnológicos para apoiar o processo de Ensino-aprendizagem.</p>
+        </div>
+
+        <div class="proposta-card">
+          <div class="proposta-icon">❤️</div>
+          <h3>Sáude e Bem-estar</h3>
+          <p>Implementação de práticas de promoçã da saúde física e mental dos alunos e funcionários.</p>
+        </div>
+        
+        <div class="proposta-card">
+          <div class="proposta-icon">🤲</div>
+          <h3>Extensão</h3>
+          <p>Criação de projetos que permitam aos alunos aplicarem seus conhecimentos e habilidades em contextos reais.</p>
+        </div>
+
+         <div class="proposta-card">
+          <div class="proposta-icon">🌱</div>
+          <h3>Sustentabilidade</h3>
+          <p>Manutenção da horta com implementação de práticas de sustentabilidade, como reciclagem e uso eficiente de recursos, para reduzir o impacto ambiental da escola.</p>
+        </div>
+
+        <div class="proposta-card">
+          <div class="proposta-icon">🏘️</div>
+          <h3>Comunidade</h3>
+          <p>Fortalecimento das relações com a comunidade.<br>
+Estabelecimento de parcerias com organizações locais e empresas para oferecer oportunidades de estágios e empregos para os alunos.
+</p>
+        </div>
+
+        <div class="proposta-card">
+          <div class="proposta-icon">👨‍👩‍👧‍👦</div>
+          <h3> Participação do Pais</h3>
+          <p>Criação de canais de comunicação eficazes para envolver os pais e responsáveis  no processo de ensino-aprendizagem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REALIZAÇÕES -->
+  <section class="realizacoes">
+    <div class="realizacoes-container">
+      <h2 class="section-title" style="color: white;">O Que Já Foi Feito</h2>
+      
+      <div class="realizacoes-grid">
+        <div class="realizacao-card">
+          <h3>Tecnologia</h3>
+          <p> Aquisição de novos equipamentos:  Data-show, Chromebooks, jogos de matemática etc.<br>
+          Ampliação da  Internet</p>
+        </div>
+        
+        <div class="realizacao-card">
+          <h3>Melhorias na Infraestrutura</h3>
+          <p> Reforma elétrica total da escola, o retelhamento, pintura de todas salas de aula, setor administrativo, refeitório, na quadra foram restaurados todos os pilares, arquibancadas, pintura, marcação  do piso,  passagens dos blocos das salas de aula.</p>
+        </div>
+        
+        <div class="realizacao-card">
+          <h3> Setor Cultural</h3>
+          <p>Organização de feiras, mostras culturais e eventos que integram escola e comunidade.</p>
+        </div>
+        
+        <div class="realizacao-card">
+          <h3> Avaliações Externas</h3>
+          <p>Aplicação do Saeb, OBMEP, Plataforma Purall, SIMAIS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VÍDEO CAMPANHA -->
+  <section class="video">
+    <video width="640" height="360" controls>
+<source src="video/videoeleições2025.mp4" type="video/mp4">
+<source src="video.ogg" type="video/ogg">
+Seu navegador não suporta o elemento de vídeo
+</video>
+
+  <!-- URNA -->
+  <section class="urna">
+    <h2 class="section-title">Simule seu voto!</h2>
+
+    <div class="urna-container">
+      <span class="numero-label">Digite 1 e confirme</span>
+      <input id="numero" maxlength="2" placeholder="1">
+      <button onclick="confirmarVoto()">CONFIRMAR</button>
+      <p id="mensagem"></p>
+    </div>
+    <audio id="somUrna" preload="auto">
+      <source src="urna.mp3" type="audio/mp3">
+      <source src="urna.mp3" type="audio/wav">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">CHAPA 1</div>
+      <div class="footer-info">Eleições 2026–2028 | Escola Estadual Professora Maria Stella Pinheiro Costa</div>
+      <div class="footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">in</a>
+        <a href="#" class="social-icon">ig</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function confirmarVoto() {
+      const numero = document.getElementById("numero").value.trim();
+      const msg = document.getElementById("mensagem");
+      
+      if (numero === "1") {
+        msg.innerHTML = "✅ Voto computado para <strong>CHAPA 1</strong>!";
+        msg.style.color = "#1800ad";
+        
+        // Efeito visual de confirmação
+        document.querySelector('.urna-container').style.boxShadow = "inset 0 0 8px rgba(24, 0, 173, 0.5)";
+        setTimeout(() => {
+          document.querySelector('.urna-container').style.boxShadow = "inset 0 0 8px rgba(0,0,0,0.3)";
+        }, 1000);
+        
+      } else if (numero === "") {
+        msg.innerHTML = "⚠️ Digite o número da chapa.";
+        msg.style.color = "#a00";
+      } else {
+        msg.innerHTML = "❌ Número inválido. Tente novamente.";
+        msg.style.color = "#a00";
+      }
+
+      document.getElementById("numero").value = "";
+    }
+  </script>
+
+</body>
+</html>
